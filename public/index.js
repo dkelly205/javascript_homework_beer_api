@@ -16,18 +16,23 @@ const requestComplete = function() {
   const jsonString = this.responseText;
   const beers = JSON.parse(jsonString);
   populateList(beers)
-
 }
 
 const populateList = function(beers) {
+
   const ul = document.getElementById('beer-list')
-  beers.forEach(function(beer, index) {
-    let li = document.createElement('li')
-    li.innerText = beer.name + " " + "<img src='beer.image_url'/>"
-    li.value = index
-    ul.appendChild(li)
+  beers.forEach(function(beer) {
+    let li = document.createElement('li');
+    let img = document.createElement('img');
+    let image = createImage
+    img.src = beer.image_url;
+    li.appendChild(img);
+
+    li.innerText = heading;
+    ul.appendChild(li);
     debugger;
   })
+
 }
 
 window.addEventListener('load', app);
